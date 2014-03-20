@@ -1,0 +1,84 @@
+
+class Merhaba
+	def sinif
+		puts "Merhaba ben bir sinif metoduyum."
+	end
+	def nesne
+		puts "Merhaba ben bir nesne metoduyum."
+	end
+end
+
+##########################################
+
+class Animal
+	def selamla
+		puts "Hayvanlardan merhaba."
+	end
+end
+
+class Human < Animal
+	def akil
+		puts  "insanlar akillidir."
+	end
+end
+
+#joe = Human.new
+#joe.selamla
+#joe.akil
+
+############################################
+
+class Fish < Animal
+	def initialize(name)
+		@name = name
+	end
+	def swim
+		puts "#{@name} yuzer."
+	end
+	def fly
+		puts "#{@name} ucamaz."
+	end
+end
+class Bird < Animal
+	def initialize(name)
+		@name = name
+	end
+	def swim
+		puts "#{@name} yuzemez."
+	end
+	def fly
+		puts "#{@name} ucar."
+	end
+end
+
+balik = Fish.new "hamsi"
+balik.swim
+balik.fly
+
+puts "##################"
+
+kus = Bird.new "keklik"
+kus.swim
+kus.fly
+
+puts "##################"
+
+#############################################
+
+class Person
+	def initialize(name)
+		@name = name
+	end
+	def oku
+		return "#{@name}"
+	end
+end
+	
+class Doctor < Person
+	def meslek
+		puts "Dr. #{oku}"
+	end
+end
+	
+isim = Doctor.new "Ali Vural"
+isim.meslek
